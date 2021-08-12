@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Physician extends Model
+class Physicians extends Model
 {
     public $timestamps = false;
     protected $fillable= ['lastName','firstName','speciality'];

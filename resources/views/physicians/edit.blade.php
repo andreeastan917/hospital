@@ -1,3 +1,4 @@
+@include("layouts.app")
 <div class="card uper">
   <div class="card-header">
     Edit Physician Data
@@ -12,25 +13,28 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('physician.update', $physician->id ) }}">
+      <form method="post" action="{{ route('physicians.update', $physicians->id ) }}">
           <div class="form-group">
               @csrf
               @method('PATCH')
               <label for="country_name">First Name:</label>
-              <input type="text" class="form-control" name="firstName" value="{{ $physician->firstName }}"/>
+              <input type="text" class="form-control" name="firstName" value="{{ $physicians->firstName }}"/>
           </div>
           <div class="form-group">
               <label for="cases">Last Name:</label>
-              <input type="text" class="form-control" name="lastName" value="{{ $physician->lastName }}"/>
+              <input type="text" class="form-control" name="lastName" value="{{ $physicians->lastName }}"/>
           </div>
           <div class="form-group">
               <label for="cases">Speciality:</label>
-              <input type="text" class="form-control" name="speciality" value="{{ $physician->sex}}"/>
+              <input type="text" class="form-control" name="speciality" value="{{ $physicians->sex}}"/>
               
           </div>
         
           <button type="submit" class="btn btn-primary">Update Data</button>
       </form>
+      <div>
+       <a href="{{ route('physicians.index')}}" class="btn btn-primary">Back</a> 
+  </div> 
   </div>
 </div>
 

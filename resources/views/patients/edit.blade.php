@@ -1,3 +1,4 @@
+@include("layouts.app")
 <div class="card uper">
   <div class="card-header">
     Edit Patient Data
@@ -34,6 +35,9 @@
           </div>
           <button type="submit" class="btn btn-primary">Update Data</button>
       </form>
+      <div>
+       <a href="{{ route('patients.index')}}" class="btn btn-primary">Back</a> 
+  </div> 
   </div>
 </div>
 

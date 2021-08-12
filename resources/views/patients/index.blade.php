@@ -1,7 +1,8 @@
 @include("pages.menu")
 <div>
-  <a href="{{ route('patients.create')}}" class="btn btn-primary">Adauga</a> 
+  <a href="{{ route('patients.create')}}" class="btn btn-primary">Add Patient</a> 
 </div>
+
 <div class="uper">
   <!-- @if(session()->get('success'))
     <div class="alert alert-success">

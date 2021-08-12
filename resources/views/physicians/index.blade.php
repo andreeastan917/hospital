@@ -1,5 +1,9 @@
 @include("pages.menu")
 
+<div>
+  <a href="{{ route('physicians.create')}}" class="btn btn-primary">Add Physician</a> 
+</div>
+
 <div class="uper">
   <!-- @if(session()->get('success'))
     <div class="alert alert-success">
@@ -18,15 +22,15 @@
     </thead>
     <tbody>
 
-        @foreach($physician as $physician)
+        @foreach($physicians as $physician)
         <tr>
             <td>{{$physician->id}}</td>
             <td>{{$physician->lastName}}</td>
             <td>{{$physician->firstName}}</td>
             <td>{{$physician->speciality}}</td>
-            <td><a href="{{ route('physician.edit', $physician->id)}}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{{ route('physicians.edit', $physician->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('physician.destroy', $physician->id)}}" method="post">
+                <form action="{{ route('physicians.destroy', $physician->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

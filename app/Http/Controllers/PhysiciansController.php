@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Physician;
-class PhysicianController extends Controller
+use App\Physicians;
+class PhysiciansController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PhysicianController extends Controller
      */
     public function index()
     {
-        $physician = Physician::all();
-        return view('physician.index', compact('physician'));
+        $physicians = Physicians::all();
+        return view('physicians.index', compact('physicians'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PhysicianController extends Controller
      */
     public function create()
     {
-        return view('physician.create');
+        return view('physicians.create');
     }
 
     /**
@@ -42,9 +42,9 @@ class PhysicianController extends Controller
             'lastName' => 'required',
             'speciality' => 'required'
         ]);
-        $show = Physician::create($validareDate);
+        $show = Physicians::create($validareDate);
    
-        return redirect('/physician')->with('success', 'Physician is successfully saved');
+        return redirect('/physicians')->with('success', 'Physician is successfully saved');
     }
 
     /**
@@ -66,9 +66,9 @@ class PhysicianController extends Controller
      */
     public function edit($id)
     {
-        $physician = Physician::findOrFail($id);
+        $physicians = Physicians::findOrFail($id);
 
-        return view('physician.edit', compact('physician'));
+        return view('physicians.edit', compact('physicians'));
     }
 
     /**
@@ -85,9 +85,9 @@ class PhysicianController extends Controller
             'firstName' => 'required',
             'speciality' => 'required'
         ]);
-        Physician::whereId($id)
+        Physicians::whereId($id)
         ->update($validatedData);
-        return redirect('/physician')->with('success', 'Physician Data is successfully updated');
+        return redirect('/physicians')->with('success', 'Physician Data is successfully updated');
     }
 
     /**
@@ -98,9 +98,9 @@ class PhysicianController extends Controller
      */
     public function destroy($id)
     {
-        $physician = Physician::findOrFail($id);
-        $physician->delete();
+        $physicians = Physicians::findOrFail($id);
+        $physicians->delete();
 
-        return redirect('/physician')->with('success', 'Physician Data is successfully deleted');
+        return redirect('/physicians')->with('success', 'Physician Data is successfully deleted');
     }
 }

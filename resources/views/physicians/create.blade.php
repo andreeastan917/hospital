@@ -1,7 +1,7 @@
+@include("layouts.app")
+
 <div class="card uper">
-  <div class="card-header">
-    Add Physician Data
-  </div>
+  <div class="card-header">Add Physician Data</div>
   <div class="card-body">
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -12,7 +12,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('physician.store') }}">
+      <form method="post" action="{{ route('physicians.store') }}">
           <div class="form-group">
               @csrf
           </div>
@@ -34,7 +34,11 @@
 
           <button type="submit" class="btn btn-primary">Add Physician</button>
       </form>
+      <div>
+       <a href="{{ route('physicians.index')}}" class="btn btn-primary">Back</a> 
+  </div> 
   </div>
+        
 </div>
 <style>
   .uper {
