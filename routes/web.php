@@ -24,22 +24,10 @@ Route::get('/proiectulMeu', function () {
     return view('primaPagina');
 });
 
-Route::get('send-mail', function () {
-    $details = [
-        'title' => 'Mail from Pharmacy',
-        'body' => 'This is for testing email using smtp'
-    ];
-
-   \Mail::to('andreea.stan9@yahoo.com') -> send (new \App\Mail\MyTestMail($details));
-
-  //  dd("Email is Sent.");
-});
 
 Route::resource('patients','PatientsController');
 Route::resource('physicians','PhysiciansController');
 Route::resource('products','ProductsController');
-
-
 
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
@@ -48,3 +36,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('logout', 'Auth\LoginController@logout');
 });
 
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

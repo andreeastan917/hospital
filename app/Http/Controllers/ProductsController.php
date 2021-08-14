@@ -10,7 +10,7 @@ class ProductsController extends Controller
     
     public function index()
     {
-         $products = Products::all();
+         $products = Products::where ('prescription', 'OTC') -> get();
          return view('products.index', compact('products'));
     }
 

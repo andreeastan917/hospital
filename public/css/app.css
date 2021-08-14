@@ -1,0 +1,17 @@
+body{
+    background-image: url(bk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+li{
+    list-style-type: none;
+}
+
+.col-md-6{
+    margin: 10px;
+}
+
+.form-group{
+    margin: 5px;
+}

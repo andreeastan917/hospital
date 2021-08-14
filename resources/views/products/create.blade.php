@@ -60,8 +60,3 @@
   </div> 
   </div>
 </div>
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
