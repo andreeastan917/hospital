@@ -10,11 +10,6 @@
     <title>{{ config('app.name', 'BestCarePharmacy') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-    <!-- CSS only -->
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,17 +19,27 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Pharmacy') }}
+                    {{ config('app.name', 'BestCarePharmacy') }}
                 </a>
+
+            <div class="navbar-menu">
+                <a href="/patients">Patients</a>
+                <a href="/products">Products</a>
+                <a href="/physicians">Physicians</a>
+            </div>
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                  
+                
+                
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -75,3 +80,6 @@
     </div>
 </body>
 </html>
+
+
+

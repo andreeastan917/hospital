@@ -1,17 +1,17 @@
-body{
-    background-image: url(bk.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.navbar-menu a{
+    text-decoration: none;
 }
-
-li{
-    list-style-type: none;
-}
-
+   
 .col-md-6{
     margin: 10px;
 }
 
 .form-group{
     margin: 5px;
+}
+
+body{
+    background-image: url(bk1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
